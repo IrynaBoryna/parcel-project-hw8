@@ -12,16 +12,18 @@ const galleryListEl = createGallery(galleryItems);
 
 galleryContainer.insertAdjacentHTML("beforeend", galleryListEl);
 
+
 function createGallery (galleryItems) {
 return galleryItems
     .map(({ preview, original, description }) => {
 return `
-<li>
+<li style = "list-style: none">
 <a class="gallery__item" href='${original}'>
   <img class="gallery__image" src='${preview}' alt='${description}' />
 </a>
 </li>
 `;
+
 })
 .join('');
 }
